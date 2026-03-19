@@ -33,5 +33,6 @@
   "postCreateCommand": "npm install && chmod +x scripts/start.sh",
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {}
-  }
+  },
+  "postAttachCommand": "./scripts/start.sh"
 }
