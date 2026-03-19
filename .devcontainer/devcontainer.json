@@ -2,18 +2,12 @@
   "name": "silent-auth-tutorial",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
   "forwardPorts": [
-    3000,
     1234
   ],
   "portsAttributes": {
     "1234": {
       "label": "Tutorial",
       "onAutoForward": "openPreview"
-    },
-    "3000": {
-      "label": "Learner App",
-      "onAutoForward": "ignore",
-      "protocol": "http"
     }
   },
   "customizations": {
@@ -36,7 +30,7 @@
       }
     }
   },
-  "postCreateCommand": "npm install && (cd workspace && npm install) && chmod +x scripts/start.sh",
+  "postCreateCommand": "npm install && chmod +x scripts/start.sh",
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {}
   }
