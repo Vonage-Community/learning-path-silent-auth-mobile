@@ -1,0 +1,43 @@
+{
+  "name": "silent-auth-tutorial",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
+  "forwardPorts": [
+    3000,
+    1234
+  ],
+  "portsAttributes": {
+    "1234": {
+      "label": "Tutorial",
+      "onAutoForward": "openPreview"
+    },
+    "3000": {
+      "label": "Learner App",
+      "onAutoForward": "ignore",
+      "protocol": "http"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [],
+      "settings": {
+        "workbench.startupEditor": "none",
+        "workbench.welcomePage.walkthroughs.openOnInstall": false,
+        "files.exclude": {
+          ".devcontainer": true,
+          "src": true,
+          "scripts": true,
+          "node_modules": true,
+          ".gitignore": true,
+          "astro.config.mjs": true,
+          "package.json": true,
+          "package-lock.json": true,
+          "tutorial.config.yaml": true
+        }
+      }
+    }
+  },
+  "postCreateCommand": "npm install && (cd workspace && npm install) && chmod +x scripts/start.sh",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  }
+}
